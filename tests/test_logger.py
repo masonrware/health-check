@@ -9,7 +9,7 @@ def test_logger_updates_correctly():
     """Tests that the logger correctly tracks availability percentages."""
     logger = AvailabilityLogger()
     
-    # Simulating requests to two domains
+    # simulating requests to two domains
     logger.update("fetch.com", True)
     logger.update("fetch.com", False)
     logger.update("fetch.com", True)
@@ -17,7 +17,7 @@ def test_logger_updates_correctly():
     logger.update("www.fetchrewards.com", True)
     logger.update("www.fetchrewards.com", False)
 
-    # Fetch.com: 2/3 UP = 67%
+    # fetch.com: 2/3 UP = 67%
     # www.fetchrewards.com: 1/2 UP = 50%
     availability = logger.get_availability()
     
