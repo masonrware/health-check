@@ -1,0 +1,19 @@
+- headers:
+    user-agent: fetch-synthetic-monitor
+  method: GET
+  name: fetch homepage
+  url: https://fetch.com/
+- name: broken page test
+  url: https://nonexistent-site-example.com/
+- name: missing rewards page
+  url: https://fetch.com/nonexistentpage
+- headers:
+    user-agent: fetch-synthetic-monitor
+  method: GET
+  name: valid test page
+  url: https://www.google.com/
+- headers:
+    user-agent: fetch-synthetic-monitor
+  method: GET
+  name: another invalid test page
+  url: https://invalid-fetch-test.com/
