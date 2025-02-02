@@ -6,13 +6,13 @@ from src.health_check import load_config, check_endpoint
 def sample_config():
     """Loads a sample YAML file from the configs directory."""
     with open("configs/sample_config.yaml", "r") as file:
-        return file.name  # Return the file path
+        return file.name
 
 def test_parse_yaml_config(sample_config):
     """Tests that the YAML file is correctly parsed into a Python list."""
     endpoints = load_config(sample_config)
     assert isinstance(endpoints, list)
-    assert len(endpoints) > 0  # Ensure there are endpoints
+    assert len(endpoints) > 0  # ensure there are endpoints
     assert "name" in endpoints[0]
     assert "url" in endpoints[0]
 
@@ -24,8 +24,8 @@ def test_check_endpoint_up(mock_request, mock_time):
     mock_response.status_code = 200
     mock_request.return_value = mock_response
     
-    # Mock time.time() to simulate elapsed time (400 ms)
-    mock_time.side_effect = [0, 0.4]  # Start time and end time
+    # mock time.time() to simulate elapsed time (400 ms)
+    mock_time.side_effect = [0, 0.4]
 
     result = check_endpoint({
         "name": "Test Endpoint",
@@ -39,13 +39,13 @@ def test_check_endpoint_up(mock_request, mock_time):
 @patch("requests.request")
 def test_check_endpoint_down(mock_request, mock_time):
     """Tests an endpoint that returns a 500 status or high latency."""
-    # Test case 1: 500 status code
+    # test case 1: 500 status code
     mock_response = MagicMock()
     mock_response.status_code = 500
     mock_request.return_value = mock_response
     
-    # Mock time.time() to simulate elapsed time (200 ms)
-    mock_time.side_effect = [0, 0.2]  # Start time and end time
+    # mock time.time() to simulate elapsed time (200 ms)
+    mock_time.side_effect = [0, 0.2]
     
     result = check_endpoint({
         "name": "Test Endpoint",
@@ -55,13 +55,13 @@ def test_check_endpoint_down(mock_request, mock_time):
     })
     assert result == False
 
-    # Test case 2: High latency
+    # test case 2: high latency
     mock_response = MagicMock()
     mock_response.status_code = 200
     mock_request.return_value = mock_response
     
-    # Mock time.time() to simulate high latency (600ms)
-    mock_time.side_effect = [0, 0.6]  # Start time and end time
+    # mock time.time() to simulate high latency (600ms)
+    mock_time.side_effect = [0, 0.6]
     
     result = check_endpoint({
         "name": "Test Endpoint",

@@ -13,7 +13,7 @@ class AvailabilityLogger:
 
     def get_availability(self):
         """
-        Getter method for returning availability data structure.
+        Getter method for returning availability tracker.
         """
         return self.availability
     
@@ -24,7 +24,7 @@ class AvailabilityLogger:
         :param url: The full URL of the endpoint.
         :param is_up: Boolean indicating if the endpoint was UP.
         """
-        domain = self.extract_domain(url)  # Extract domain from URL
+        domain = self.extract_domain(url)
         self.availability[domain]["total"] += 1
         if is_up:
             self.availability[domain]["up"] += 1
@@ -36,7 +36,7 @@ class AvailabilityLogger:
         :param url: The full HTTP/HTTPS URL.
         :return: The extracted domain.
         """
-        return url.split("//")[-1].split("/")[0]  # Extracts domain from URL
+        return url.split("//")[-1].split("/")[0]  # extracts domain from URL
 
     def log_availability(self):
         """
@@ -45,5 +45,5 @@ class AvailabilityLogger:
         for domain, stats in self.availability.items():
             up_count = stats["up"]
             total_count = stats["total"]
-            percentage = round((up_count / total_count) * 100)  # Rounded to nearest whole number
+            percentage = round((up_count / total_count) * 100)  # rounded to nearest whole number
             print(f"{domain} has {percentage}% availability percentage")
