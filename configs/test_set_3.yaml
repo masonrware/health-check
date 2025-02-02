@@ -22,4 +22,4 @@
     user-agent: fetch-synthetic-monitor
   method: GET
   name: Reddit homepage
-  url: https://www.reddit.com/
+  url: https://www.nbc.com/

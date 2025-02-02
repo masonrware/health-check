@@ -54,6 +54,7 @@ def monitor_endpoints(config_file):
             logger.update(url, is_up)
         # print availability percentages
         logger.log_availability() 
+        print("-" * 50)
         time.sleep(15) # 15 seconds
 
 if __name__ == "__main__":

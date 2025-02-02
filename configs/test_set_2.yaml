@@ -1,6 +1,4 @@
-- headers:
-    user-agent: fetch-synthetic-monitor
-  method: GET
+- method: GET
   name: fetch homepage
   url: https://fetch.com/
 - name: broken page test
