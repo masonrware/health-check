@@ -11,6 +11,7 @@ This project is a **Health Check Monitoring Tool** that continuously monitors HT
     - [1️⃣ Clone the Repository](#1️⃣-clone-the-repository)
     - [2️⃣ Create and Activate a Virtual Environment (Optional but Recommended)](#2️⃣-create-and-activate-a-virtual-environment-optional-but-recommended)
     - [3️⃣ Install Dependencies](#3️⃣-install-dependencies)
+    - [4️⃣ Setup Python Modules](#4️⃣-setup-python-modules)
   - [Running the Program](#running-the-program)
     - [🔹 Running Health Check Monitoring](#-running-health-check-monitoring)
     - [🔹 Sample Output](#-sample-output)
@@ -75,6 +76,11 @@ source venv/bin/activate  # On Windows, use 'venv\Scripts\activate'
 ### 3️⃣ Install Dependencies
 ```sh
 pip install -r requirements.txt
+```
+
+### 4️⃣ Setup Python Modules
+```sh
+python3 setup.py install
 ```
 
 ---
