@@ -14,7 +14,7 @@ setup(
     description="A simple API client for making HTTP requests.",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
-    url="https://github.com/yourusername/simple_api_client",  # Replace with your repo link
+    url="https://github.com/masonrware/health-check",
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
