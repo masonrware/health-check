@@ -22,7 +22,8 @@ def check_endpoint(endpoint):
     :return: (boolean) True if the endpoint is UP, False otherwise.
     """
     method = endpoint.get("method", "GET").upper()  # default to GET if not provided
-    url = endpoint["url"]
+    url = endpoint["url"] # requires
+    name = endpoint["name"] # required but unused (should fail if not present)
     headers = endpoint.get("headers", {})  # default to an empty dictionary if headers are missing
     body = endpoint.get("body", None)
 
@@ -54,7 +55,6 @@ def monitor_endpoints(config_file):
             logger.update(url, is_up)
         # print availability percentages
         logger.log_availability() 
-        print("-" * 50)
         time.sleep(15) # 15 seconds
 
 if __name__ == "__main__":

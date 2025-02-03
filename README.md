@@ -92,10 +92,8 @@ The tool will start monitoring the endpoints and will log **availability percent
 ```
 fetch.com has 33% availability percentage
 www.fetchrewards.com has 100% availability percentage
---------------------------------------------------
 fetch.com has 67% availability percentage
 www.fetchrewards.com has 50% availability percentage
---------------------------------------------------
 ```
 Press **CTRL + C** to stop the program.
 
